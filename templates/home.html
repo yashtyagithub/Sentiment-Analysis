@@ -1,0 +1,41 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<html>
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Sentiment Analysis</title>
+    </head>
+    <body>
+        <div><h2 style="text-align:center;color:blue;font-size:60px;font-family:serif,arial,helvetica">Welcome To Sentiment Analysisr</h2></div>
+
+        <div class = "input-group">
+
+          <form action="/sentiment_analysis_prediction" method="post" enctype="multipart/form-data">
+          <br><br><textarea name="text" placeholder="Enter text here ...." rows="4" cols="100"></textarea><br><br>
+
+           <input type="submit">
+           </form>
+        </div>
+
+        <br><h5 style="color:blue"> Sentiment of given text is:</h5>
+        <div class="alert alert-primary" role="alert">
+          {% if probability %}
+            {{ sentiment }}
+             {% endif %}
+        </div>
+
+        <br><h5 style="color:blue">Score:</h5>
+        <h6 style="color:blue">(score lie between 0 to 1, higher the score more positive the given text)</h6>
+        <div class="alert alert-primary" role="alert">
+          {% if probability %}
+            {{ probability }}
+             {% endif %}
+        </div>
+    </body>
+</html>
